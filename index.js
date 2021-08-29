@@ -3,6 +3,7 @@ import fs from "fs";
 
 const app = express();
 const curr_date = new Date();
+const PORT = 
 
 //API endpoint to create a text file in a particular folder
 app.get("/", (request, response) => {
