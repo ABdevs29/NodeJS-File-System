@@ -1,9 +1,12 @@
 import express from "express";
 import fs from "fs";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const curr_date = new Date();
-const PORT = 
+const PORT = process.env.PORT;
 
 //API endpoint to create a text file in a particular folder
 app.get("/", (request, response) => {
@@ -40,4 +43,4 @@ app.get("/files", async (request, response) => {
   response.send(file_names);
 });
 
-app.listen(3800, () => console.log("Server has started"));
+app.listen(PORT, () => console.log("Server has started"));
